@@ -7,28 +7,27 @@
 //
 
 import Foundation
-import Aeris
 
 class ForecastStorage {
     
-    var places = [AWFPlace]()
+    var places = [Place]()
     
-    private var observations = [String: AWFObservation]()
-    private var forecastPeriods = [String: [AWFForecastPeriod]]()
+    private var observations = [String: Observation]()
+    private var forecastPeriods = [String: [ForecastPeriod]]()
     
-    func addObservation(_ observation: AWFObservation, for placeName: String) {
+    func add(_ observation: Observation, for placeName: String) {
         observations[placeName] = observation
     }
     
-    func getObservation(_ placeName: String) -> AWFObservation? {
+    func getObservation(_ placeName: String) -> Observation? {
         return observations[placeName]
     }
     
-    func addPeriods(_ periods: [AWFForecastPeriod], for placeName: String) {
+    func add(_ periods: [ForecastPeriod], for placeName: String) {
         forecastPeriods[placeName] = periods
     }
     
-    func getPeriods(_ placeName: String) -> [AWFForecastPeriod]? {
+    func getPeriods(_ placeName: String) -> [ForecastPeriod]? {
         return forecastPeriods[placeName]
     }
 }

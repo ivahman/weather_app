@@ -15,6 +15,8 @@ class ForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var conditionImageView: UIImageView!
     
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var maxTempLabel: UILabel!
+    @IBOutlet weak var minTempLabel: UILabel!
     
     var forecastPeriod: AWFForecastPeriod? {
         didSet {
@@ -29,12 +31,13 @@ class ForecastTableViewCell: UITableViewCell {
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .short
             dateFormatter.locale = Locale.current
-            dateFormatter.timeZone = forecast.timeZone
             dateLabel.text = dateFormatter.string(from: forecast.timestamp!)
             
             conditionImageView.image = UIImage(named: forecast.icon!)
             
             tempLabel.text = "\(forecast.avgTempC!)ºC"
+            maxTempLabel.text = "max: \(forecast.maxTempC!)ºC"
+            minTempLabel.text = "min: \(forecast.minTempC!)ºC"
         }
         
     }

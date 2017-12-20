@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		27C2F52884185A128A82D921 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC365765B6BF0EEE9D9ABE1 /* Pods_Weather.framework */; };
 		5410A2291FD485BE00E8FE84 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A2281FD485BE00E8FE84 /* ForecastTableViewCell.swift */; };
-		5410A22B1FD71FAA00E8FE84 /* ForecastStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A22A1FD71FAA00E8FE84 /* ForecastStorage.swift */; };
 		542DF1AD1FC1F53800023796 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DF1AC1FC1F53800023796 /* AddPlaceViewController.swift */; };
 		5432605C1FA4D00A00B95D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5432605B1FA4D00A00B95D85 /* AppDelegate.swift */; };
 		543260611FA4D00A00B95D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5432605F1FA4D00A00B95D85 /* Main.storyboard */; };
 		543260631FA4D00A00B95D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543260621FA4D00A00B95D85 /* Assets.xcassets */; };
 		543260661FA4D00A00B95D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543260641FA4D00A00B95D85 /* LaunchScreen.storyboard */; };
+		544E3D3E1FDC514B00FC528D /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 544E3D3C1FDC514B00FC528D /* Weather.xcdatamodeld */; };
+		544E3D5E1FDDA05100FC528D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E3D5D1FDDA05100FC528D /* Place.swift */; };
 		54F916E91FAF6EB80019094F /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F916E81FAF6EB80019094F /* FavoritesTableViewController.swift */; };
 		54F916EB1FAF77510019094F /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F916EA1FAF77510019094F /* ForecastViewController.swift */; };
 /* End PBXBuildFile section */
@@ -22,7 +23,6 @@
 /* Begin PBXFileReference section */
 		40A8D49C1FE451B645264CBE /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		5410A2281FD485BE00E8FE84 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
-		5410A22A1FD71FAA00E8FE84 /* ForecastStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastStorage.swift; sourceTree = "<group>"; };
 		542DF1AC1FC1F53800023796 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		543260581FA4D00A00B95D85 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5432605B1FA4D00A00B95D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		543260621FA4D00A00B95D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543260651FA4D00A00B95D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543260671FA4D00A00B95D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		544E3D3D1FDC514B00FC528D /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
+		544E3D5D1FDDA05100FC528D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		54F916E81FAF6EB80019094F /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		54F916EA1FAF77510019094F /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		7927B2F8B475A2CD60846783 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,7 +88,8 @@
 				54F916EA1FAF77510019094F /* ForecastViewController.swift */,
 				542DF1AC1FC1F53800023796 /* AddPlaceViewController.swift */,
 				5410A2281FD485BE00E8FE84 /* ForecastTableViewCell.swift */,
-				5410A22A1FD71FAA00E8FE84 /* ForecastStorage.swift */,
+				544E3D3C1FDC514B00FC528D /* Weather.xcdatamodeld */,
+				544E3D5D1FDDA05100FC528D /* Place.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -225,10 +228,11 @@
 			files = (
 				5410A2291FD485BE00E8FE84 /* ForecastTableViewCell.swift in Sources */,
 				54F916EB1FAF77510019094F /* ForecastViewController.swift in Sources */,
-				5410A22B1FD71FAA00E8FE84 /* ForecastStorage.swift in Sources */,
+				544E3D3E1FDC514B00FC528D /* Weather.xcdatamodeld in Sources */,
 				5432605C1FA4D00A00B95D85 /* AppDelegate.swift in Sources */,
 				542DF1AD1FC1F53800023796 /* AddPlaceViewController.swift in Sources */,
 				54F916E91FAF6EB80019094F /* FavoritesTableViewController.swift in Sources */,
+				544E3D5E1FDDA05100FC528D /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		544E3D3C1FDC514B00FC528D /* Weather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				544E3D3D1FDC514B00FC528D /* Weather.xcdatamodel */,
+			);
+			currentVersion = 544E3D3D1FDC514B00FC528D /* Weather.xcdatamodel */;
+			path = Weather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 543260501FA4D00A00B95D85 /* Project object */;
 }

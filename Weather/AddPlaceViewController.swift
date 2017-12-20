@@ -13,6 +13,7 @@ class AddPlaceViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     private let loader: AWFPlacesLoader = AWFPlacesLoader()
     private var places = [AWFPlace]()
@@ -36,6 +37,13 @@ class AddPlaceViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        doneButton.isEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +63,7 @@ class AddPlaceViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         selectedPlace = places[indexPath.row]
+        doneButton.isEnabled = true
     }
     
     @IBAction func textFieldEditing(_ sender: UITextField) {
